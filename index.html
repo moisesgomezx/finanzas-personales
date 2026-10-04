@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finanzas Personales</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">CONTROL FINANCIERO</p>
+        <h1>Mis Finanzas</h1>
+        <p class="subtitle">Registra tus ingresos y gastos de forma sencilla.</p>
+      </div>
+      <div class="balance-card">
+        <span>Saldo actual</span>
+        <strong id="balance">$0</strong>
+      </div>
+    </header>
+
+    <section class="summary">
+      <article class="summary-card">
+        <span>Ingresos</span>
+        <strong id="income">$0</strong>
+      </article>
+      <article class="summary-card">
+        <span>Gastos</span>
+        <strong id="expenses">$0</strong>
+      </article>
+      <article class="summary-card">
+        <span>Movimientos</span>
+        <strong id="count">0</strong>
+      </article>
+    </section>
+
+    <section class="grid">
+      <section class="panel">
+        <h2>Nuevo movimiento</h2>
+        <form id="transactionForm">
+          <label for="description">Descripción</label>
+          <input id="description" type="text" placeholder="Ej. Mercado" required>
+
+          <label for="amount">Valor</label>
+          <input id="amount" type="number" min="1" step="0.01" placeholder="Ej. 50000" required>
+
+          <label for="type">Tipo</label>
+          <select id="type" required>
+            <option value="income">Ingreso</option>
+            <option value="expense">Gasto</option>
+          </select>
+
+          <button type="submit">Agregar movimiento</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Movimientos</h2>
+            <p>Últimos registros guardados</p>
+          </div>
+          <button id="clearButton" class="secondary" type="button">Limpiar todo</button>
+        </div>
+        <div id="emptyState" class="empty">Todavía no tienes movimientos.</div>
+        <ul id="transactionList" class="transactions"></ul>
+      </section>
+    </section>
+
+    <footer>
+      <p>Proyecto académico · Finanzas Personales</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
